@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.PrimaryController"
+            prefWidth="1200" prefHeight="700"
+            styleClass="root-pane">
+
+    <!-- TOP: window bar + nav bar -->
+    <top>
+        <VBox styleClass="top-bar-wrapper">
+
+            <!-- Window bar with three dots + title -->
+            <HBox spacing="8" styleClass="window-bar">
+                <padding>
+                    <Insets top="8" right="10" bottom="4" left="10"/>
+                </padding>
+
+                <!-- three colored dots as small circles -->
+                <Pane styleClass="window-dot close-dot"/>
+                <Pane styleClass="window-dot min-dot"/>
+                <Pane styleClass="window-dot max-dot"/>
+
+                <Label text="Quantum Browser" styleClass="app-title"/>
+
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- Navigation bar -->
+            <HBox spacing="10" styleClass="nav-bar">
+                <padding>
+                    <Insets top="6" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Button text="⟵" onAction="#onBack" styleClass="nav-icon-button"/>
+                <Button text="⟶" onAction="#onForward" styleClass="nav-icon-button"/>
+                <Button text="⟳" onAction="#onReload" styleClass="nav-icon-button"/>
+
+                <Button fx:id="homeButton" text="Home"
+                        onAction="#onHome"
+                        styleClass="home-button"/>
+
+                <TextField fx:id="addressBar"
+                           promptText="Search or type a URL"
+                           HBox.hgrow="ALWAYS"
+                           styleClass="address-bar"/>
+
+                <Button fx:id="goButton" text="Go"
+                        onAction="#onGo"
+                        styleClass="primary-button"/>
+
+                <Button fx:id="googleButton" text="Search"
+                        onAction="#onSearch"
+                        styleClass="primary-button"/>
+
+                <!-- three-dot menu button -->
+                <Button fx:id="menuButton"
+                        text="⋮"
+                        onAction="#onToggleSidePanel"
+                        styleClass="menu-button"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CENTER: WebView + overlay side panel -->
+    <center>
+        <StackPane styleClass="center-pane">
+
+            <!-- Main browser area -->
+            <WebView fx:id="webView" StackPane.alignment="CENTER"/>
+
+            <!-- Right slide-in side panel (starts hidden with translateX=350) -->
+            <StackPane fx:id="sidePanel"
+                       StackPane.alignment="CENTER_RIGHT"
+                       translateX="1600"
+                       styleClass="side-panel">
+
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+
+                    <Label text="Bookmarks" styleClass="panel-title"/>
+                    <ListView fx:id="bookmarksList" prefHeight="250"/>
+
+                    <Separator/>
+
+                    <Label text="History" styleClass="panel-title"/>
+                    <ListView fx:id="historyList" VBox.vgrow="ALWAYS"/>
+
+                    <Button text="Clear History"
+                            onAction="#onClearHistory"
+                            styleClass="danger-button"/>
+                </VBox>
+            </StackPane>
+        </StackPane>
+    </center>
+
+    <!-- BOTTOM: status bar -->
+    <bottom>
+        <HBox styleClass="status-bar">
+            <padding>
+                <Insets top="5" right="10" bottom="5" left="10"/>
+            </padding>
+            <Label fx:id="statusLabel" text="Ready"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

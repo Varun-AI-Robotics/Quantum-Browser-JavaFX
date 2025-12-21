@@ -1,0 +1,11 @@
+project\dao\GenericDAO.class
+project\dao\HistoryDAO.class
+project\model\HistoryEntry.class
+project\model\BaseEntity.class
+project\dao\BaseDAO.class
+project\servlets\HistoryServlet.class
+project\dao\BookmarkDAO.class
+project\dao\DBUtil.class
+project\exception\DataAccessException.class
+project\model\Bookmark.class
+project\servlets\BookmarkServlet.class
