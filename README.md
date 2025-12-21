@@ -151,8 +151,17 @@ src/main/java/project/
 - MIT License — Free to use and modify.
 
 ## 📸 Screenshot:
+
+### Browser view
 ![image alt](https://github.com/Varun-AI-Robotics/Quantum-Browser/blob/1905a7516e26e7786b95ac5a64f1315ec6c5da14/Screenshot%202025-11-23%20132102.png)
 
+### Control Panel
+![image alt](https://github.com/Varun-AI-Robotics/Quantum-Browser-JavaFX/blob/cac4c734f162ae20128c12bff30f48eea232687c/Srvelet%20Control%20Panel.png)
 
+### Bookmars
+![image alt](https://github.com/Varun-AI-Robotics/Quantum-Browser-JavaFX/blob/cac4c734f162ae20128c12bff30f48eea232687c/Bookmarks.png)
+
+### Browsing History
+![image alt](https://github.com/Varun-AI-Robotics/Quantum-Browser-JavaFX/blob/cac4c734f162ae20128c12bff30f48eea232687c/Browsing%20History.png)
 
 
