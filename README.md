@@ -114,7 +114,7 @@ http://localhost:8080/QuantumBrowserRubric/index.jsp
 ```
 
 
- ## ▶ How to Run
+ ## ▶ How to Run Application
 
  ```bash
 mvn -Pdesktop clean javafx:run "-Djavafx.platform=win"
